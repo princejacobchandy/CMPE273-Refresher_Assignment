@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p>Enter the current location of package and click 'How far is the package?' button.</p>
+
+Latitude: <input type="text" id="lat">
+Longitude: <input type="text" id="long"><br><br>
+<button onclick="getLocation()">How far is the package?</button><br><br>
+<p id="details"></p>
+<p id="dest_details"></p>
+<p id="distance"></p>
+
+<script>
+var x = document.getElementById("details");
+var z = document.getElementById("dest_details");
+var y = document.getElementById("distance");
+var x_pos = document.getElementById("lat").value;
+var y_pos = document.getElementById("long").value;
+x_pos = Number(x_pos);
+y_pos = Number(y_pos);
+function getLocation() {
+        navigator.geolocation.getCurrentPosition(showPosition);
+}
+function showPosition(position) {
+    x.innerHTML = "Package Location<br>Latitude: " + x_pos +
+    "<br>Longitude: " + y_pos;
+	z.innerHTML = "Destination Location<br>Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude;
+	
+    var startLatRads = x_pos * (Math.PI / 180);
+    var startLongRads = y_pos * (Math.PI / 180);
+    var destLatRads =  (position.coords.latitude) * (Math.PI / 180);
+    var destLongRads = (position.coords.longitude) * (Math.PI / 180);
+    var Radius = 6371; // radius of the Earth in km
+    var distance = Math.acos(Math.sin(startLatRads) * Math.sin(destLatRads) +
+    Math.cos(startLatRads) * Math.cos(destLatRads) *
+    Math.cos(startLongRads - destLongRads)) * Radius;
+    y.innerHTML = "Package is " + distance +" Kms" + " away from the destination";	
+	}
+</script>
+</body>
+</html>

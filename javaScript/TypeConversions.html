@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Type Conversions</title>
+</head>
+<body>
+<p id="events"></p>  
+<button type="button" onclick="myFunction()">Change Temperature Unit</button>
+<script>
+var temp_fahrenheit = prompt("Please enter current temperature in Fahrenheit");
+var temp_celsius = Number(temp_fahrenheit) - 32;
+document.getElementById("events").innerHTML = "Current Temperature in Fahrenheit is " + temp_fahrenheit;
+
+function myFunction() {
+    document.getElementById("events").innerHTML = "Current Temperature in Celsius is " + 
+temp_celsius;
+}
+</script>
+</body>
+</html>

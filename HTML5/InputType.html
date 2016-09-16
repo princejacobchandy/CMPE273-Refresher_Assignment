@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Input Types</title>
+</head>
+<body>
+<form>
+<h2>Please provide the following details to sign up!</h2>
+<h3>Personal Details</h3>
+First name: <input type="text" name="fname" autofocus>
+Last name: <input type="text" name="lname">
+<br><br>e-mail: <input type="email" name="email" required>
+<br><hr><h3>Login Info</h3><br>
+Username: <input type="text" name="usrname" required>
+Password: <input type="text" name="pword" required>
+<hr>
+<h3>Other Details</h3>
+Homepage:<input type="url" name="homepage">
+Country code: <input type="text" name="country_code" pattern="[A-Za-z]{3}" title="Three letter country code">
+</br><br><input type="submit" value = "Submit"></br>
+</form>
+</body>
+</html>

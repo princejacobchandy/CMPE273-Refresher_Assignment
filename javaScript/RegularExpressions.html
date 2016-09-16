@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>RegExp</title>
+</head>
+<body>
+<p id="regxp">SJSU is a great College</p>  
+<button onclick="reg_xp()">Try it</button>
+<script>
+function reg_xp() {
+    var string = document.getElementById("regxp").innerHTML;
+    var mod_string = string.replace(/SJSU/i,"San Jose State University");
+    document.getElementById("regxp").innerHTML = mod_string;
+}
+</script>
+</body>
+</html>

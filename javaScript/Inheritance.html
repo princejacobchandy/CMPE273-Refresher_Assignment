@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Inheritance</title>
+</head>
+<body>
+<p id="inheritance"></p>  
+<script>
+var animal = { eats: "Animal Eats" };
+var rabbit = { jumps: "Rabbit Jumps"};
+rabbit.__proto__ = animal;  // rabbit inherit properties of animal
+//rabbit.prototype = animal;
+//alert(rabbit.eats);
+document.getElementById("inheritance").innerHTML = rabbit.eats + ". " + rabbit.jumps;
+</script>
+</body>
+</html>

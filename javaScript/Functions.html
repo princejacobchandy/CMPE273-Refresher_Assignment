@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Variables</title>
+</head>
+<body>
+<p id="functions"></p>  
+<script> 
+function lbs_to_kg (weight_lbs) {
+    return (weight_lbs / 2.20462);
+}
+var user_weight = prompt("Please enter your weight in pounds");
+document.getElementById("functions").innerHTML = "You weigh " + lbs_to_kg(user_weight) + " kg";
+</script>
+</body>
+</html>

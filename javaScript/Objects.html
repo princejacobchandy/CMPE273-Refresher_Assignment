@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Objects</title>
+</head>
+<body>
+<p id="objects"></p>  
+<script> 
+var course = {code: "default", level: "grad", dept: "SE"};
+course.code = prompt("Please enter the course code");
+document.getElementById("objects").innerHTML = "course code: " + course.code + 
+", course level: " + course.level + ", course department: " + course.dept;
+</script>
+</body>
+</html>

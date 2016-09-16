@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Conditions</title>
+</head>
+<body>
+<button onclick="GPACalc()">Calculate GPA</button>
+<p id="conditions">...</p>
+<script>
+function GPACalc() {
+    var gpa;
+    var grade = prompt("Enter grade (A,B,C)");
+    if (grade=='A') {
+        gpa = 4;
+    } else if (grade=='B') {
+        gpa = 3.5;
+    } else if (grade=='C') {
+        gpa = 3;
+    }
+      else {
+        gpa = 0;
+    }
+document.getElementById("conditions").innerHTML = gpa;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Local Storage</title>
+</head>
+<body>
+<p><button onclick="storednamefun()" type="button">Login</button></p>
+<div id="result"></div>
+<script>
+if (localStorage.whousedlast) {
+document.getElementById("result").innerHTML = localStorage.whousedlast + " was the last visitor";
+}
+else {
+document.getElementById("result").innerHTML = "Nobody have visited the page yet!";
+}
+function storednamefun() {
+    var name;
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.whousedlast) {
+            //document.getElementById("result").innerHTML = "Last usedname is " + localStorage.whousedlast;
+            name = prompt("You are the first person to visit the page today! Please enter your name");
+
+        } else {
+            name = prompt("Please enter your name");
+        }
+        localStorage.whousedlast = name;
+        document.getElementById("result").innerHTML = localStorage.whousedlast + " was the last visitor";
+    } else {
+        document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+}
+</script>
+</body>
+</html>

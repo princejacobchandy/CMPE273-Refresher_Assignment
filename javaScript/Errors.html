@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Errors</title>
+</head>
+<body>
+<p>Please input your GPA(1-4)</p>
+<input id="demo" type="text">
+<button type="button" onclick="catch_error()">GPA Entered</button>
+<p id="errormessage"></p>
+<script>
+function catch_error() {
+    var no;
+    no = document.getElementById("demo").value;
+    try {
+        if(no == "")  throw "empty";
+        if(isNaN(no)) throw "not a valid number";
+        no = Number(no);
+        if(no < 1)    throw "less than 1";
+        if(no > 4)   throw  "greater than 4";
+    }
+    catch(err) {
+        //errormessage.innerHTML = "Entered GPA is " + err;
+        document.getElementById("errormessage").innerHTML = "Entered GPA is " + err;
+    }
+}
+</script>
+</body>
+</html>

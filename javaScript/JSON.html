@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JSON</title>
+</head>
+<body>
+<p>Enter reference ID (1-5)</p>
+<input id="demo1" type="text">
+<button onclick="phone_book()">Display Contact Details</button>
+<p id="demo2"></p>
+<script>
+function phone_book() {
+var no = document.getElementById("demo1").value;
+no = Number(no);
+var phone_list = '{"phonebook":[' +
+'{"firstName":"John","lastName":"Doe","number":"6692927271" },' +
+'{"firstName":"Anna","lastName":"Smith","number":"6692927272" },' +
+'{"firstName":"Peter","lastName":"Jones","number":"6692927273" },' +
+'{"firstName":"Mary","lastName":"Swienstieger","number":"6692927274" },' +
+'{"firstName":"Fiona","lastName":"Smoky","number":"6692927275" }]}';
+var information = JSON.parse(phone_list);
+document.getElementById("demo2").innerHTML =
+information.phonebook[no-1].firstName + " " + information.phonebook[no-1].lastName + " : " + information.phonebook[no-1].number;
+}
+</script>
+</body>
+</html>

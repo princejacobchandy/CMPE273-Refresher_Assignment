@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Strict Mode</title>
+</head>
+<body>
+<button onclick="strict_mode()">Strict Mode Enabled</button>
+<button onclick="not_strict_mode()">Strict Mode Disabled</button>
+<p id="strictmode"></p>  
+<script>
+function strict_mode()
+{
+"use strict";
+x = "Error Reported!";    // This will cause an error as x is not defined.
+document.getElementById("strictmode").innerHTML = x; //This line won't be executed
+}
+function not_strict_mode()
+{
+x = "No Error Reported!";    
+document.getElementById("strictmode").innerHTML = x; 
+}
+</script>
+</body>
+</html> 
